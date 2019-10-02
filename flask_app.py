@@ -11,4 +11,7 @@ def hello():
 
 @app.route("/api")
 def j():
-	return pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
+	data = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
+	json_data = data.to_json(orient='records')
+	return json_data
+
