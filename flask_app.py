@@ -12,7 +12,7 @@ def hello():
 
 @app.route("/api", methods=["POST", "GET"])
 def j():
-	if request.methods == "POST": 
+	if request.method == "POST": 
 		post_data = request.form.to_dict(flat=False)
 		print(post_data)
 		post_data_df = pd.DataFrame(post_data)
@@ -21,7 +21,7 @@ def j():
 		print(post_data_json)
 		return post_data_json
 
-	elif request.methods == "GET":
+	elif request.method == "GET":
 		post_data = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]}).to_json(orient='records')
 		return post_data
 
