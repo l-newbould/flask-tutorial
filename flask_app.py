@@ -21,7 +21,7 @@ def j():
 		print(post_data_json)
 		return post_data_json
 
-	else if request.methods == "GET":
+	elif request.methods == "GET":
 		post_data = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]}).to_json(orient='records')
 		return post_data
 
